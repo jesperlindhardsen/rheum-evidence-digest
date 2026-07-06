@@ -26,14 +26,15 @@
   {{placeholder}} values and the number of repeated blocks.
   Each item is a brief outline (title, journal, first & last author, tier, PMID link).
   The full abstract goes inside the <details>/<summary> toggle so it is collapsed by
-  default; when expanded it renders at normal reading font size (no small/shrunk text —
-  handled by .abstract-full in style.css).
+  default; when expanded it renders at normal reading font size (handled by
+  .abstract-full in style.css).
   Author format: "First...Last" if 3+ authors, "First & Last" if 2, just the name if 1.
+  Tier badge class must match tier number: t1, t2, t3, or t4.
 -->
 <h2>{{Disease group name}}</h2>
 <h3>{{Evidence type name}}</h3>
 <div class="item">
-  <p class="title">{{Original article title}}<span class="tier-badge">T{{tier 1-4}}</span></p>
+  <p class="title">{{Original article title}}<span class="tier-badge t{{tier 1-4}}">T{{tier 1-4}}</span></p>
   <p class="meta">{{First author}}...{{Last author}} · {{Journal name}} · <a href="https://pubmed.ncbi.nlm.nih.gov/{{PMID}}/">PMID {{PMID}}</a></p>
   <details class="abstract-toggle">
     <summary>Vis abstract</summary>
