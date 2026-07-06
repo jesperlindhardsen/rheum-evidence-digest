@@ -4,6 +4,10 @@
   --border: #e2e2e2;
   --link: #0b5fff;
   --bg: #ffffff;
+  --tier1-bg: #fee2e2; --tier1-fg: #b91c1c;
+  --tier2-bg: #ffedd5; --tier2-fg: #c2410c;
+  --tier3-bg: #dbeafe; --tier3-fg: #1d4ed8;
+  --tier4-bg: #f3f4f6; --tier4-fg: #4b5563;
 }
 * { box-sizing: border-box; }
 body {
@@ -31,8 +35,13 @@ a { color: var(--link); }
 .item { margin: 0 0 16px 0; }
 .item .title { font-weight: 600; margin: 0; }
 .item .meta { color: var(--muted); margin: 2px 0; }
-.tier-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; background: #eef2ff; color: #3949ab; margin-left: 6px; }
-.item .takehome { margin: 4px 0 6px; }
+.tier-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+.tier-badge:contains("T1") {}
+.item[data-tier="1"] .tier-badge,
+.tier-badge.t1 { background: var(--tier1-bg); color: var(--tier1-fg); }
+.tier-badge.t2 { background: var(--tier2-bg); color: var(--tier2-fg); }
+.tier-badge.t3 { background: var(--tier3-bg); color: var(--tier3-fg); }
+.tier-badge.t4 { background: var(--tier4-bg); color: var(--tier4-fg); }
 .item details.abstract-toggle { margin-top: 4px; }
 .item details.abstract-toggle summary { cursor: pointer; color: var(--link); font-size: 0.85rem; }
 .item details.abstract-toggle summary:hover { text-decoration: underline; }
